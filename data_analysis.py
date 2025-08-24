@@ -39,9 +39,9 @@ print(df)
 print("First 5 Rows of the Dataset:")
 print(df.head())
 
-#Top 7 attack types
-print("\nTop 7 attack types:")
-print(df['Attack Type'].value_counts().head(7))
+#Top 6 attack types
+print("\nTop 6 attack types:")
+print(df['Attack Type'].value_counts().head(6))
 
 #Average financial loss by attack type (in Million $):
 print("\nAverage financial loss by attack type (in Million $):")
