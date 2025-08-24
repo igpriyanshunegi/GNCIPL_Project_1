@@ -5,63 +5,74 @@ import seaborn as sns
 
 # Dataset Info
 df = pd.read_csv('Global_Cybersecurity_Threats_2015-2024.csv')
-print("Dataset Information: ")
+print("\nDataset Information: ")
 print(df.info())
 
 # Dataset Describe
-print("Description of the Dataset:")
+print("\nDescription of the Dataset:")
 print(df.describe())
 
-# Dataset Columns
-print("Columns Present in the Dataset:")
+# Information about columns
+print("\nColumns Present in the Dataset:")
 print(df.columns)
-
-#Data types of the columns of the dataset
 print("\n Data types of the columns of the dataset: ")
 print(df.dtypes)
 
 #Total number of incidents
-print("Total number of incidents:", len(df))
+print("\nTotal number of incidents:", len(df))
 
-# Dataset Rows & Columns count
-print("Number of Rows:", df.shape[0])
-print("Number of Columns:", df.shape[1])
+# Number of Rows & Columns
+print("\nNumber of Rows:", df.shape[0])
+print("\nNumber of Columns:", df.shape[1])
 
 #Incidents by year
 print("\nIncidents by year:")
 print(df['Year'].value_counts().sort_index())
 
-#Reading the CVS file
-print(df)
+#Reading Dataset
+print("\n",df)
 
 
-# Dataset First Look
-print("First 5 Rows of the Dataset:")
+# Top 5 data
+print("\nFirst 5 Rows of the Dataset:")
 print(df.head())
 
-#Top 6 attack types
+
+
+# Top 7  most targeted industries
+("\nTop 7 most targeted industries:")
+print(df['Target Industry'].value_counts().head(7))
+
+
+# Top 6 attack types
 print("\nTop 6 attack types:")
 print(df['Attack Type'].value_counts().head(6))
+
+
 
 #Average financial loss by attack type (in Million $):
 print("\nAverage financial loss by attack type (in Million $):")
 print(df.groupby('Attack Type')['Financial Loss (in Million $)'].mean().sort_values(ascending=False))
 
+
 #Most common attack sources
 print("\nMost common attack sources:")
 print(df['Attack Source'].value_counts())
 
+
 # Dataset Duplicate Value Count
-print("Number of Duplicate Values:", df.duplicated().sum())
+print("\nNumber of Duplicate Values:", df.duplicated().sum())
+
+
 
 
 # Missing Values/Null Values Count
-print("Missing Values in each Columns of the Dataset: ")
+print("\nMissing Values in each Columns of the Dataset: ")
 print(df.isnull().sum())
 
 
 # Check Unique Values for each columns
-print("Unique Values in each Columns of the Dataset: ")
+print("\nUnique Values in each Columns of the Dataset: ")
 print(df.nunique())
 
 
